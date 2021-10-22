@@ -4,17 +4,17 @@ import {
   HeartFill,
   Pause,
   Play,
-  PlayBtnFill
+  PlayBtnFill,
 } from "react-bootstrap-icons";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import {
   addToFavorite,
   addToPlayer,
-  removeFromFavorite
+  removeFromFavorite,
 } from "../redux/actions";
 
-const Song = ({ track, albumImg }) => {
+const Song = ({ track, albumImg, albumTitle }) => {
   const dispatch = useDispatch();
   const isLiked = useSelector((state) =>
     state.favorite.songs.find((t) => t.id === track.id)
@@ -25,9 +25,17 @@ const Song = ({ track, albumImg }) => {
 
   const toggle = () => {
     if (isLiked === undefined) {
-      dispatch(addToFavorite(track));
+      dispatch(
+        addToFavorite({ ...track, cover: albumImg, albumTitle: albumTitle })
+      );
     } else {
-      dispatch(removeFromFavorite(track));
+      dispatch(
+        removeFromFavorite({
+          ...track,
+          cover: albumImg,
+          albumTitle: albumTitle,
+        })
+      );
     }
   };
 

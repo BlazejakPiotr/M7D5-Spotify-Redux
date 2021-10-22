@@ -5,7 +5,7 @@ import { Row } from "react-bootstrap";
 class Album extends React.Component {
   state = {
     album: {},
-    songs: []
+    songs: [],
   };
 
   componentDidMount = async () => {
@@ -13,7 +13,7 @@ class Album extends React.Component {
 
     let headers = new Headers({
       "X-RapidAPI-Host": "deezerdevs-deezer.p.rapidapi.com",
-      "X-RapidAPI-Key": "222902beabmshb95a65b737cead6p1f3ac9jsn23ced94c0d20"
+      "X-RapidAPI-Key": "222902beabmshb95a65b737cead6p1f3ac9jsn23ced94c0d20",
     });
 
     try {
@@ -21,7 +21,7 @@ class Album extends React.Component {
         "https://striveschool-api.herokuapp.com/api/deezer/album/" + albumId,
         {
           method: "GET",
-          headers
+          headers,
         }
       );
 
@@ -29,7 +29,7 @@ class Album extends React.Component {
         let album = await response.json();
         this.setState({
           album,
-          songs: album.tracks.data
+          songs: album.tracks.data,
         });
       }
     } catch (exception) {
@@ -78,6 +78,7 @@ class Album extends React.Component {
                 {this.state.songs.map((song) => (
                   <Song
                     albumImg={this.state.album.cover}
+                    albumTitle={this.state.album.title}
                     track={song}
                     key={song.id}
                   />
