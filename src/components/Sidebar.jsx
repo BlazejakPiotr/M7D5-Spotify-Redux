@@ -3,7 +3,7 @@ import { Link, withRouter } from "react-router-dom";
 
 class Sidebar extends React.Component {
   state = {
-    searchInput: "",
+    searchInput: ""
   };
 
   render() {
@@ -59,7 +59,7 @@ class Sidebar extends React.Component {
                           aria-describedby="basic-addon2"
                           onChange={(event) =>
                             this.setState({
-                              searchInput: event.currentTarget.value,
+                              searchInput: event.currentTarget.value
                             })
                           }
                         />
@@ -86,7 +86,7 @@ class Sidebar extends React.Component {
             </div>
           </div>
 
-          <div className="nav-btn">
+          <div className="nav-btn" style={{ marginBottom: "128px" }}>
             <button className="btn" id="signup-btn" type="button">
               Sign Up
             </button>
