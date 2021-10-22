@@ -4,23 +4,30 @@ import { useSelector } from "react-redux";
 
 const Player = () => {
   const songInPlayer = useSelector((state) => state.player.song);
-
   return (
-    <div className="container-fluid fixed-bottom bg-container pt-1 offset-lg-2">
+    <div
+      className="container-fluid fixed-bottom bg-container pt-1"
+      style={{ zIndex: "9999" }}
+    >
       <Row>
-        {/* <div className="col-lg-3 py-3 d-flex align-items-center text-white">
-          <img
-            src={songInPlayer.cover}
-            style={{ width: "55px", height: "55px", marginRight: "10px" }}
-          />
-          <div className="d-flex flex-column justify-content-center">
-            <div>{songInPlayer.title}</div>
-            <div className="text-muted">{songInPlayer.artist.name}</div>
+
+        {songInPlayer.title ? (
+          <div className="col-lg-3 py-3 d-flex align-items-center text-white">
+            <img
+              src={songInPlayer.cover}
+              style={{ width: "55px", height: "55px", marginRight: "10px" }}
+            />
+            <div className="d-flex flex-column justify-content-center">
+              <div>{songInPlayer.title}</div>
+              <div className="text-muted">{songInPlayer.artist.name}</div>
+            </div>
           </div>
-        </div>
+        ) : (
+          <div className="col-lg-3 py-3 d-flex align-items-center text-white"></div>
+        )}
         <div className="col-lg-9">
           <Row>
-            <div className="col-6 col-md-4 col-lg-2 offset-3 offset-md-4 offset-lg-5 playerControls mt-1">
+            <div className="col-6 col-md-4 col-lg-2 offset-1 offset-md-2 offset-lg-3 playerControls mt-1">
               <Row>
                 <a href="/">
                   <img src="/playerbuttons/Shuffle.png" alt="shuffle" />
@@ -40,7 +47,7 @@ const Player = () => {
               </Row>
             </div>
           </Row>
-          <Row className="justify-content-center playBar py-3">
+          <Row className="playBar py-3 offset-lg-1">
             <div className="col-8 col-md-6">
               <div id="progress">
                 <div
