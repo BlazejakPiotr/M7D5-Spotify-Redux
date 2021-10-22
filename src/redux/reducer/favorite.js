@@ -6,12 +6,12 @@ export const favoriteReducer = (state = initialState, action) => {
     case ADD_TO_FAVORITE:
       return {
         ...state,
-        songs: [...songs, action.payload],
+        songs: [...state.songs, action.payload],
       };
     case REMOVE_FROM_FAVORITE:
       return {
         ...state,
-        songs: songs.filter((song) => song.id !== action.payload.id),
+        songs: state.songs.filter((song) => song.id !== action.payload.id),
       };
 
     default:
