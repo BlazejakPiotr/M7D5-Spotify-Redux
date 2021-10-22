@@ -8,7 +8,7 @@ const Player = () => {
   return (
     <div className="container-fluid fixed-bottom bg-container pt-1 offset-lg-2">
       <Row>
-        <div className="col-lg-3 py-3 d-flex align-items-center text-white">
+        {/* <div className="col-lg-3 py-3 d-flex align-items-center text-white">
           <img
             src={songInPlayer.cover}
             style={{ width: "55px", height: "55px", marginRight: "10px" }}
@@ -53,7 +53,7 @@ const Player = () => {
               </div>
             </div>
           </Row>
-        </div>
+        </div> */}
       </Row>
     </div>
   );

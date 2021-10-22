@@ -1,4 +1,5 @@
 import React from "react";
+import { Heart, HeartFill } from "react-bootstrap-icons";
 import { Link, withRouter } from "react-router-dom";
 
 class Sidebar extends React.Component {
@@ -45,6 +46,12 @@ class Sidebar extends React.Component {
                     <Link to="/" className="nav-item nav-link">
                       <i className="fas fa-book-open fa-lg"></i>&nbsp; Your
                       Library
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/favorite" className="nav-item nav-link">
+                      <HeartFill size={22} />
+                      &nbsp; Favorite
                     </Link>
                   </li>
                   {this.props.location.pathname === "/" && (
