@@ -1,7 +1,6 @@
 import React from "react";
 import { Row, Col } from "react-bootstrap";
 import { useSelector } from "react-redux";
-import { defaultSong } from "../defaultSong";
 
 const Player = () => {
   const songInPlayer = useSelector((state) => state.player.song);
@@ -23,16 +22,7 @@ const Player = () => {
             </div>
           </div>
         ) : (
-          <div className="col-lg-3 py-3 d-flex align-items-center text-white">
-            <img
-              src={defaultSong.cover}
-              style={{ width: "55px", height: "55px", marginRight: "10px" }}
-            />
-            <div className="d-flex flex-column justify-content-center">
-              <div>{defaultSong.title}</div>
-              <div className="text-muted">{defaultSong.artist.name}</div>
-            </div>
-          </div>
+          <div className="col-lg-3 py-3 d-flex align-items-center text-white"></div>
         )}
         <div className="col-lg-9">
           <Row>
