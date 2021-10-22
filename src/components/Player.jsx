@@ -10,6 +10,7 @@ const Player = () => {
       style={{ zIndex: "9999" }}
     >
       <Row>
+
         {songInPlayer.title ? (
           <div className="col-lg-3 py-3 d-flex align-items-center text-white">
             <img
@@ -59,7 +60,7 @@ const Player = () => {
               </div>
             </div>
           </Row>
-        </div>
+        </div> */}
       </Row>
     </div>
   );
